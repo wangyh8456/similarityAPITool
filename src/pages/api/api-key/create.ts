@@ -12,6 +12,7 @@ const handler = async (
     res: NextApiResponse<CreateApiData>
 ) => {
     try {
+        //getServerSession在tsx文件中的调用方式是await getServerSession(authOptions)，API Route中的调用方式是await getServerSession(req, res, authOptions)
         const user = await getServerSession(req, res, authOptions).then(res => res?.user);
         if (!user) {
             res.status(401).json({
