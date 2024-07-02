@@ -9,10 +9,10 @@ function getGithubCrendentials() {
     const clientSecret = process.env.GITHUB_CLIENT_SECRET;
 
     if (!clientId || clientId.length === 0) {
-        throw new Error('No clientId for google provider set');
+        throw new Error('No clientId for github provider set');
     }
     if (!clientSecret || clientSecret.length === 0) {
-        throw new Error('No clientSecret for google provider set');
+        throw new Error('No clientSecret for github provider set');
     }
 
     return { clientId, clientSecret }
